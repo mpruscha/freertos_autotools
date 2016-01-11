@@ -1,3 +1,14 @@
+FreeRTOS with autotools.
+
+Example usage:
+
+mkdir build
+cd build
+../configure --host=avr --prefix=/usr/local/avr-gcc/freertos CFLAGS='-mmcu=atmega32u4 -DBOARD=MICRO -DF_CPU=16000000UL -DF_USB=16000000UL -Os -ffunction-sections -I/usr/local/avr-gcc/include -I../portable/GCC/ATMega323/'
+make
+sudo make install
+
+
 Each real time kernel port consists of three files that contain the core kernel
 components and are common to every port, and one or more files that are 
 specific to a particular microcontroller and or compiler.
